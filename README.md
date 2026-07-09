@@ -64,6 +64,45 @@ Remediation
 
 ---
 
+# SQL Injection
+
+## Objective
+
+Demonstrate SQL Injection testing using DVWA and Burp Suite.
+
+## Environment
+
+- DVWA
+- Kali Linux
+- Burp Suite Community Edition
+- Apache
+- PHP
+- MySQL
+
+## Vulnerability
+
+The application directly inserts user-controlled input into an SQL query without parameterized statements.
+
+Payload used:
+
+```sql
+1' OR '1'='1
+```
+
+Result:
+
+The application returned multiple database records instead of one, confirming successful SQL Injection.
+
+## Evidence
+
+| Screenshot | Description |
+|------------|-------------|
+| 01 | DVWA Security Level |
+| 02 | Normal Application Behaviour |
+| 03 | Burp Proxy Capture |
+| 04 | SQL Injection using Burp Repeater |
+| 05 | Vulnerable Source Code |
+
 ## Skills Demonstrated
 
 - Burp Suite
