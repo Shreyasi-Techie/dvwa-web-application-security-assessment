@@ -1,4 +1,4 @@
-# 🔐 DVWA Security Testing Laboratory
+# 🔐 DVWA Web Application Security Assessment 
 
 ![Platform](https://img.shields.io/badge/Platform-Kali%20Linux-blue)
 ![Target](https://img.shields.io/badge/Application-DVWA-red)
