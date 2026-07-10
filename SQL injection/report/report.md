@@ -34,4 +34,4 @@ Use parameterized SQL queries and server-side validation.
 
 ## Evidence
 
-See screenshots/sql-injection/
+See screenshots/screenshots.md
