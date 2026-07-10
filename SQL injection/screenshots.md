@@ -4,7 +4,7 @@
 
 Shows DVWA configured with Low Security.
 
-![Security Level](screenshots/sql-injection/01-security-level.png)
+![Security Level]https://github.com/Shreyasi-Techie/dvwa-web-application-security-assessment/blob/main/SQL%20injection/screenshots/01-security-level.png
 
 ---
 
