@@ -128,6 +128,23 @@ Through this assessment I gained practical experience in:
 
 ---
 
+### Command Injection
+
+Performed manual testing of DVWA's Command Execution module using Burp Suite.
+
+Activities performed:
+
+- Captured HTTP POST requests
+- Modified user-controlled parameters
+- Verified operating system command execution
+- Executed `whoami`
+- Read `/etc/passwd`
+- Established a reverse shell using Netcat
+- Documented exploitation evidence
+- Proposed remediation aligned with secure coding practices
+
+---
+
 ## Disclaimer
 
 Testing was performed only in an authorized educational laboratory.
