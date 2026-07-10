@@ -4,7 +4,7 @@
 
 Shows the default application behavior when a valid IP address is submitted.
 
-![Normal Ping](screenshots/command-injection/01-normal-ping.png)
+![Normal Ping](screenshots/01-normal-ping.png)
 
 ---
 
@@ -12,7 +12,7 @@ Shows the default application behavior when a valid IP address is submitted.
 
 Burp Suite intercepting the POST request.
 
-![POST Request](screenshots/command-injection/02-burp-intercept-post-request.png)
+![POST Request](screenshots/02-burp-intercept-post-request.png)
 
 ---
 
@@ -20,7 +20,7 @@ Burp Suite intercepting the POST request.
 
 Original POST request before modification.
 
-![Repeater Original](screenshots/command-injection/03-repeater-original-request.png)
+![Repeater Original](screenshots/03-repeater-original-request.png)
 
 ---
 
@@ -28,7 +28,7 @@ Original POST request before modification.
 
 The payload executes the `whoami` command.
 
-![Whoami](screenshots/command-injection/04-command-injection-whoami.png)
+![Whoami](screenshots/04-command-injection-whoami.png)
 
 ---
 
@@ -36,7 +36,7 @@ The payload executes the `whoami` command.
 
 Sensitive file disclosure via command injection.
 
-![Passwd](screenshots/command-injection/cmd_05_sensitive_file_read_passwd.png)
+![Passwd](screenshots/cmd_05_sensitive_file_read_passwd.png)
 
 ---
 
@@ -44,7 +44,7 @@ Sensitive file disclosure via command injection.
 
 Attacker machine waiting for the reverse shell.
 
-![Netcat Listener](screenshots/command-injection/06-netcat-listener.png)
+![Netcat Listener](screenshots/06-netcat-listener.png)
 
 ---
 
@@ -52,4 +52,4 @@ Attacker machine waiting for the reverse shell.
 
 Reverse shell successfully obtained.
 
-![Reverse Shell](screenshots/command-injection/07-reverse-shell-established.png)
+![Reverse Shell](screenshots/07-reverse-shell-established.png)
