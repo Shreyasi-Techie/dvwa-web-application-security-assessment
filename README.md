@@ -9,142 +9,217 @@
 
 ## Overview
 
-This repository documents security testing performed against **Damn Vulnerable Web Application (DVWA)** in an authorized laboratory environment.
+This repository contains a practical **Web Application Vulnerability Assessment and Penetration Testing (VAPT)** of the **Damn Vulnerable Web Application (DVWA)** conducted in an isolated laboratory environment.
 
-The purpose of the assessment was to understand common web application vulnerabilities and their mitigation.
+The assessment focuses on identifying, validating, documenting, and recommending remediation for common web application vulnerabilities using industry-standard tools and manual testing techniques.
 
----
-
-## Vulnerabilities Assessed
-
-- SQL Injection
-- Cross-Site Scripting (Reflected)
-- Command Injection
+Each vulnerability has been documented independently with detailed findings, supporting evidence, remediation guidance, and client-style assessment reports.
 
 ---
 
-## Lab Environment
+## Objectives
+
+- Identify common web application vulnerabilities
+- Analyze HTTP requests and responses
+- Validate vulnerabilities through manual testing
+- Assess the security impact of identified issues
+- Document findings following professional VAPT reporting practices
+- Recommend secure coding and mitigation strategies
+
+---
+
+## Assessment Environment
 
 | Component | Details |
-|----------|---------|
-| Attacker | Kali Linux |
-| Target | DVWA |
-| Environment | VirtualBox |
-| Testing Type | Authorized Lab |
+|-----------|---------|
+| Target Application | Damn Vulnerable Web Application (DVWA) |
+| Operating System | Kali Linux |
+| Web Server | Apache |
+| Database | MySQL |
+| Proxy Tool | Burp Suite Community Edition |
+| Browser | Firefox |
+| Additional Tools | Netcat |
 
 ---
 
-# Methodology
-
-The assessment followed a structured testing methodology:
-
-1. Reconnaissance
-2. Intercepting HTTP traffic using Burp Suite
-3. Manual payload injection
-4. Request modification
-5. Response analysis
-6. Vulnerability validation
-7. Risk assessment
-8. Documentation
-9. Remediation recommendations
-
----
-
-# Key Findings
+# Vulnerabilities Assessed
 
 ## 1. SQL Injection
 
 **Severity:** High
 
-The application concatenates user-controlled input directly into SQL queries without validation or parameterized statements.
+The SQL Injection assessment demonstrated how insufficient validation of user input can allow attackers to manipulate backend SQL queries.
 
-**Impact**
+### Activities Performed
 
-- Authentication bypass
-- Database enumeration
-- Sensitive information disclosure
-- Potential database compromise
+- Captured HTTP requests using Burp Suite
+- Performed manual SQL Injection testing
+- Executed UNION-based SQL Injection
+- Enumerated database information
+- Retrieved user records from the database
+- Assessed application response behavior
+- Documented findings and remediation recommendations
 
-Documentation:
+**Skills Demonstrated**
+
+- SQL Injection Testing
+- Database Enumeration
+- Burp Suite Proxy & Repeater
+- HTTP Request Analysis
+- Manual Vulnerability Validation
+
+**Documentation**
 
 ```
 sql-injection/
 ```
 
+---
+
 ## 2. Reflected Cross-Site Scripting (XSS)
 
 **Severity:** High
 
-The application reflects unsanitized user input directly into the HTML response, allowing arbitrary JavaScript execution in the user's browser.
+The Reflected XSS assessment verified that user-supplied input was reflected into the application's response without proper output encoding, allowing arbitrary JavaScript execution within the browser.
 
-### Demonstrated Payloads
+### Activities Performed
 
-```html
-<script>alert(1)</script>
-```
+- Captured and modified HTTP requests
+- Executed JavaScript payloads
+- Verified reflected input
+- Demonstrated browser-side script execution
+- Analyzed server responses
+- Documented findings and mitigation strategies
 
-```html
-<script>alert(document.cookie)</script>
-```
+**Skills Demonstrated**
 
-### Impact
+- Cross-Site Scripting (XSS) Testing
+- HTTP Request & Response Analysis
+- Burp Suite Proxy & Repeater
+- Client-Side Security Testing
+- Manual Vulnerability Validation
 
-- JavaScript execution
-- Session cookie disclosure
-- Session hijacking
-- Phishing attacks
-- Client-side manipulation
-
-Documentation:
+**Documentation**
 
 ```
 reflected-xss/
 ```
 
+---
+
+## 3. Command Injection
+
+**Severity:** Critical
+
+The Command Injection assessment demonstrated how unsanitized user input can be executed as operating system commands, potentially leading to complete server compromise.
+
+### Activities Performed
+
+- Captured HTTP POST requests
+- Modified request parameters
+- Verified operating system command execution
+- Retrieved server information
+- Accessed sensitive system files
+- Established a reverse shell within the controlled lab environment
+- Documented findings and remediation recommendations
+
+**Skills Demonstrated**
+
+- Command Injection Testing
+- Burp Suite Proxy & Repeater
+- Linux Command Line
+- HTTP Request Analysis
+- Reverse Shell Fundamentals
+- Security Documentation
+
+**Documentation**
+
+```
+command-injection/
+```
+
+---
+
+# Repository Structure
+
+```
+dvwa-web-application-security-assessment/
+
+├── README.md
+│
+├── sql-injection/
+│   ├── README.md
+│   ├── findings.md
+│   ├── remediation.md
+│   ├── report.md
+│   ├── screenshots.md
+│   └── screenshots/
+│
+├── reflected-xss/
+│   ├── README.md
+│   ├── findings.md
+│   ├── remediation.md
+│   ├── report.md
+│   ├── screenshots.md
+│   └── screenshots/
+│
+├── command-injection/
+    ├── README.md
+    ├── findings.md
+    ├── remediation.md
+    ├── report.md
+    ├── screenshots.md
+    └── screenshots/
+
+```
+
+---
+
+# Tools Used
+
+- Burp Suite Community Edition
+- Firefox Browser
+- Kali Linux
+- DVWA
+- Apache
+- MySQL
+- Netcat
+
+---
+
 # Skills Demonstrated
 
-- Web Application Security Testing
-- Vulnerability Validation
-- HTTP Request Analysis
-- Burp Suite Proxy & Repeater
+- Web Application Penetration Testing (VAPT)
+- Vulnerability Assessment
 - Manual Security Testing
-- OWASP Top 10
-- Secure Coding Awareness
+- HTTP Request & Response Analysis
+- Burp Suite Proxy & Repeater
+- SQL Injection Testing
+- Cross-Site Scripting (XSS) Testing
+- Command Injection Testing
+- Database Enumeration
+- Linux Fundamentals
 - Technical Documentation
 - Vulnerability Reporting
+- OWASP Top 10 Awareness
 
 ---
 
 # Learning Outcomes
 
-Through this assessment I gained practical experience in:
+This project provided practical experience in:
 
-- Identifying web application vulnerabilities
-- Understanding HTTP request/response flows
-- Exploiting vulnerabilities safely within a controlled lab
-- Assessing business and technical impact
-- Preparing professional security assessment reports
-- Recommending secure coding practices
-
----
-
-### Command Injection
-
-Performed manual testing of DVWA's Command Execution module using Burp Suite.
-
-Activities performed:
-
-- Captured HTTP POST requests
-- Modified user-controlled parameters
-- Verified operating system command execution
-- Executed `whoami`
-- Read `/etc/passwd`
-- Established a reverse shell using Netcat
-- Documented exploitation evidence
-- Proposed remediation aligned with secure coding practices
+- Identifying common web application vulnerabilities
+- Understanding insecure coding practices
+- Intercepting and modifying HTTP traffic
+- Assessing the security impact of vulnerabilities
+- Preparing professional penetration testing documentation
+- Recommending secure coding practices and remediation techniques
 
 ---
 
-## Disclaimer
+# Disclaimer
 
-Testing was performed only in an authorized educational laboratory.
+This assessment was conducted **only within an authorized DVWA laboratory environment** for educational purposes. All testing was performed against an intentionally vulnerable application running in a local virtual machine. No unauthorized systems or production environments were targeted.
+
+---
