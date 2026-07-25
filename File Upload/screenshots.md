@@ -8,7 +8,7 @@ The assessment was performed in an isolated laboratory environment using DVWA an
 
 ## 1. Shell Payload Creation
 
-**File:** ( 1)shell_payload_creation.png)
+![Shell Payload Creation](1)%20shell_payload_creation.png)
 
 A PHP test file containing server-side command execution functionality was created for controlled vulnerability validation.
 
@@ -16,7 +16,7 @@ A PHP test file containing server-side command execution functionality was creat
 
 ## 2. File Upload Interface
 
-**File:** `2)file_upload_interface.png`
+![File Upload Interface](2)%20file_upload_interface.png)
 
 The DVWA File Upload functionality was accessed and prepared for testing.
 
@@ -24,7 +24,7 @@ The DVWA File Upload functionality was accessed and prepared for testing.
 
 ## 3. Successful File Upload
 
-**File:** `3) successful_file_upload.png`
+![File Upload Interface](3)%20successful_file_upload.png)
 
 The test file was successfully uploaded by the application, demonstrating insufficient restrictions on uploaded file types.
 
@@ -32,7 +32,7 @@ The test file was successfully uploaded by the application, demonstrating insuff
 
 ## 4. Uploaded File Execution
 
-**File:** `4) uploaded_shell_execution.png`
+![File Upload Interface](4)%20uploaded_shell_execution.png)
 
 The uploaded file was accessed through the web application and server-side execution was confirmed in the controlled lab environment.
 
@@ -40,7 +40,7 @@ The uploaded file was accessed through the web application and server-side execu
 
 ## 5. Medium Security Level
 
-**File:** `5) security_level_medium.png`
+![File Upload Interface](5)%20security_level_medium.png)
 
 The application security configuration was reviewed while testing the file upload functionality under a different security level.
 
@@ -48,7 +48,7 @@ The application security configuration was reviewed while testing the file uploa
 
 ## 6. Burp Suite Upload Request
 
-**File:** `6) burp_upload_request.png`
+![File Upload Interface](6)%20burp_upload_request.png)
 
 The file upload request was intercepted and analyzed using Burp Suite.
 
@@ -58,7 +58,7 @@ The request used the `multipart/form-data` format and contained the uploaded fil
 
 ## 7. Modified Content Type
 
-**File:** `7) modified_content_type.png`
+![File Upload Interface](7)%20modified_content_type.png)
 
 The uploaded file's client-supplied content type was modified during testing to demonstrate the importance of performing validation on the server rather than trusting client-controlled headers.
 
@@ -66,7 +66,7 @@ The uploaded file's client-supplied content type was modified during testing to 
 
 ## 8. File Uploaded Through Burp Suite
 
-**File:** `8) burp_upload_success.png`
+![File Upload Interface](8)%20burp_upload_success.png)
 
 The modified upload request was forwarded and the file was successfully accepted by the application.
 
@@ -74,7 +74,7 @@ The modified upload request was forwarded and the file was successfully accepted
 
 ## 9. Metasploit Handler Setup
 
-**File:** `9) metasploit_handler_setup.png`
+![File Upload Interface](9)%20metasploit_handler_setup.png)
 
 Metasploit was configured in the controlled lab environment to receive the reverse shell connection.
 
@@ -82,7 +82,7 @@ Metasploit was configured in the controlled lab environment to receive the rever
 
 ## 10. Reverse Shell Handler
 
-**File:** `10) reverse_shell_handler.png`
+![File Upload Interface](10)%20reverse_shell_handler.png)
 
 The required listener and handler configuration was prepared on the Kali Linux testing machine.
 
@@ -90,7 +90,7 @@ The required listener and handler configuration was prepared on the Kali Linux t
 
 ## 11. Command Shell Opened
 
-**File:** `11) command_shell_opened.png`
+![File Upload Interface](11)%20command_shell_opened.png)
 
 A command shell was successfully obtained from the target system, demonstrating the potential impact of the file upload vulnerability.
 
@@ -98,7 +98,7 @@ A command shell was successfully obtained from the target system, demonstrating 
 
 ## 12. Interactive TTY Shell
 
-**File:** `12) interactive_tty_shell.png`
+![File Upload Interface](12)%20interactive_tty_shell.png)
 
 An interactive TTY shell was established to improve command-line interaction with the target system.
 
@@ -106,7 +106,7 @@ An interactive TTY shell was established to improve command-line interaction wit
 
 ## 13. System Information Enumeration
 
-**File:** `13) system_information_enumeration.png`
+![File Upload Interface](13)%20system_information_enumeration.png)
 
 Basic system information was enumerated after obtaining command execution on the target.
 
@@ -114,7 +114,7 @@ Basic system information was enumerated after obtaining command execution on the
 
 ## 14. Network Configuration Enumeration
 
-**File:** `14) network_configuration_enumeration.png`
+![File Upload Interface](14)%20network_configuration_enumeration.png)
 
 The target's network configuration and routing information were examined as part of basic post-exploitation enumeration.
 
