@@ -8,7 +8,8 @@ The assessment was performed in an isolated laboratory environment using DVWA an
 
 ## 1. Shell Payload Creation
 
-https://github.com/Shreyasi-Techie/dvwa-web-application-security-assessment/blob/main/File%20Upload/screenshots/1)%20shell_payload_creation.png?raw=true
+<img width="943" height="114" alt="image" src="https://github.com/user-attachments/assets/4a22b58a-0942-4e73-884d-b4ed32a5552a" />
+
 
 A PHP test file containing server-side command execution functionality was created for controlled vulnerability validation.
 
