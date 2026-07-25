@@ -55,8 +55,6 @@ Tested the application's handling of user-supplied input and demonstrated SQL qu
 - UNION-based SQL Injection
 - Impact assessment and remediation
 
-📁 [View SQL Injection Assessment](SQL injection)
-
 ---
 
 ### 2. Reflected Cross-Site Scripting (XSS)
@@ -68,8 +66,6 @@ Assessed whether user-controlled input was reflected without proper output encod
 - JavaScript execution
 - HTTP request and response analysis
 - Impact assessment and remediation
-
-📁 [View Reflected XSS Assessment](./XSS-Reflected/)
 
 ---
 
@@ -84,8 +80,6 @@ Tested whether user-controlled input could be used to execute operating system c
 - Reverse shell demonstration in a controlled lab environment
 - Impact assessment and remediation
 
-📁 [View Command Injection Assessment](./Command-Injection/)
-
 ---
 
 ### 4. File Upload
@@ -99,8 +93,6 @@ Assessed the application's file upload functionality and demonstrated the securi
 - Server-side file execution
 - Command execution and reverse shell demonstration in a controlled lab environment
 - Impact assessment and remediation
-
-📁 [View File Upload Assessment](./File-Upload/)
 
 ---
 
