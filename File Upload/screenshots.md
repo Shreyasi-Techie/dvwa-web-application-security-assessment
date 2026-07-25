@@ -8,7 +8,7 @@ The assessment was performed in an isolated laboratory environment using DVWA an
 
 ## 1. Shell Payload Creation
 
-**File:** `1) shell_payload_creation.png`
+**File:** `1)shell_payload_creation.png`
 
 A PHP test file containing server-side command execution functionality was created for controlled vulnerability validation.
 
@@ -16,7 +16,7 @@ A PHP test file containing server-side command execution functionality was creat
 
 ## 2. File Upload Interface
 
-**File:** `2) file_upload_interface.png`
+**File:** `2)file_upload_interface.png`
 
 The DVWA File Upload functionality was accessed and prepared for testing.
 
