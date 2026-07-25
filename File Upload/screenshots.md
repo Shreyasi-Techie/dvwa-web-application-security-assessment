@@ -17,7 +17,8 @@ A PHP test file containing server-side command execution functionality was creat
 
 ## 2. File Upload Interface
 
-![File Upload Interface](2%29%20file_upload_interface.png)
+<img width="660" height="610" alt="image" src="https://github.com/user-attachments/assets/77296b79-1588-49d8-8773-235f8f9b8420" />
+
 
 The DVWA File Upload functionality was accessed and prepared for testing.
 
@@ -25,7 +26,8 @@ The DVWA File Upload functionality was accessed and prepared for testing.
 
 ## 3. Successful File Upload
 
-![File Upload Interface](3%29%20successful_file_upload.png)
+<img width="724" height="258" alt="image" src="https://github.com/user-attachments/assets/6dab31aa-c6b4-4676-9838-478b79e0b66e" />
+
 
 The test file was successfully uploaded by the application, demonstrating insufficient restrictions on uploaded file types.
 
@@ -33,7 +35,8 @@ The test file was successfully uploaded by the application, demonstrating insuff
 
 ## 4. Uploaded File Execution
 
-![File Upload Interface](4%29%20uploaded_shell_execution.png)
+<img width="961" height="193" alt="image" src="https://github.com/user-attachments/assets/bfed7796-0c91-4f52-a9a6-c28bfcab1c9b" />
+
 
 The uploaded file was accessed through the web application and server-side execution was confirmed in the controlled lab environment.
 
@@ -41,7 +44,8 @@ The uploaded file was accessed through the web application and server-side execu
 
 ## 5. Medium Security Level
 
-![File Upload Interface](5%29%20security_level_medium.png)
+<img width="403" height="247" alt="image" src="https://github.com/user-attachments/assets/c3167e98-97ab-43ce-842d-c1134a11c397" />
+
 
 The application security configuration was reviewed while testing the file upload functionality under a different security level.
 
@@ -49,7 +53,8 @@ The application security configuration was reviewed while testing the file uploa
 
 ## 6. Burp Suite Upload Request
 
-![File Upload Interface](6%29%20burp_upload_request.png)
+<img width="753" height="678" alt="image" src="https://github.com/user-attachments/assets/5c6c9eea-45bc-4416-9620-a71f51a74ed3" />
+
 
 The file upload request was intercepted and analyzed using Burp Suite.
 
@@ -59,7 +64,8 @@ The request used the `multipart/form-data` format and contained the uploaded fil
 
 ## 7. Modified Content Type
 
-![File Upload Interface](7%29%20modified_content_type.png)
+<img width="591" height="114" alt="image" src="https://github.com/user-attachments/assets/e2e01b4f-179b-4854-9b77-caa00ec981bb" />
+
 
 The uploaded file's client-supplied content type was modified during testing to demonstrate the importance of performing validation on the server rather than trusting client-controlled headers.
 
@@ -67,7 +73,8 @@ The uploaded file's client-supplied content type was modified during testing to 
 
 ## 8. File Uploaded Through Burp Suite
 
-![File Upload Interface](8%29%20burp_upload_success.png)
+<img width="690" height="205" alt="image" src="https://github.com/user-attachments/assets/1d67f3e5-44cb-47aa-ada8-127c0713b5cf" />
+
 
 The modified upload request was forwarded and the file was successfully accepted by the application.
 
@@ -75,7 +82,8 @@ The modified upload request was forwarded and the file was successfully accepted
 
 ## 9. Metasploit Handler Setup
 
-![File Upload Interface](9%29%20metasploit_handler_setup.png)
+<img width="706" height="126" alt="image" src="https://github.com/user-attachments/assets/6e92d44d-454f-4b6e-b59d-a063034c41e1" />
+
 
 Metasploit was configured in the controlled lab environment to receive the reverse shell connection.
 
@@ -83,7 +91,8 @@ Metasploit was configured in the controlled lab environment to receive the rever
 
 ## 10. Reverse Shell Handler
 
-![File Upload Interface](10%29%20reverse_shell_handler.png)
+<img width="904" height="76" alt="image" src="https://github.com/user-attachments/assets/b5cf0ec6-922d-4ac4-a933-4e88e07b74c8" />
+
 
 The required listener and handler configuration was prepared on the Kali Linux testing machine.
 
@@ -91,7 +100,8 @@ The required listener and handler configuration was prepared on the Kali Linux t
 
 ## 11. Command Shell Opened
 
-![File Upload Interface](11%29%20command_shell_opened.png)
+<img width="1456" height="225" alt="image" src="https://github.com/user-attachments/assets/d3e31b60-838e-4269-a5b5-de8a413891cd" />
+
 
 A command shell was successfully obtained from the target system, demonstrating the potential impact of the file upload vulnerability.
 
@@ -99,7 +109,8 @@ A command shell was successfully obtained from the target system, demonstrating 
 
 ## 12. Interactive TTY Shell
 
-![File Upload Interface](12%29%20interactive_tty_shell.png)
+<img width="948" height="217" alt="image" src="https://github.com/user-attachments/assets/891fd87f-1aa2-4f72-985a-519d7c953c91" />
+
 
 An interactive TTY shell was established to improve command-line interaction with the target system.
 
@@ -107,7 +118,8 @@ An interactive TTY shell was established to improve command-line interaction wit
 
 ## 13. System Information Enumeration
 
-![File Upload Interface](13%29%20system_information_enumeration.png)
+<img width="1005" height="339" alt="image" src="https://github.com/user-attachments/assets/96f16930-9215-4ee4-9d83-ff675eaa8606" />
+
 
 Basic system information was enumerated after obtaining command execution on the target.
 
@@ -115,7 +127,8 @@ Basic system information was enumerated after obtaining command execution on the
 
 ## 14. Network Configuration Enumeration
 
-![File Upload Interface](14%29%20network_configuration_enumeration.png)
+<img width="1273" height="715" alt="image" src="https://github.com/user-attachments/assets/b97b57ec-3cf8-4357-9961-e3b4e0bdcaef" />
+
 
 The target's network configuration and routing information were examined as part of basic post-exploitation enumeration.
 
