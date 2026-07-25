@@ -42,184 +42,96 @@ Each vulnerability has been documented independently with detailed findings, sup
 
 ---
 
-# Vulnerabilities Assessed
+## Vulnerabilities Assessed
 
-## 1. SQL Injection
+### 1. SQL Injection
 
-**Severity:** High
+Tested the application's handling of user-supplied input and demonstrated SQL query manipulation through manual SQL Injection techniques.
 
-The SQL Injection assessment demonstrated how insufficient validation of user input can allow attackers to manipulate backend SQL queries.
+**Key areas covered:**
+- SQL Injection validation
+- HTTP request analysis using Burp Suite
+- Database enumeration
+- UNION-based SQL Injection
+- Impact assessment and remediation
 
-### Activities Performed
-
-- Captured HTTP requests using Burp Suite
-- Performed manual SQL Injection testing
-- Executed UNION-based SQL Injection
-- Enumerated database information
-- Retrieved user records from the database
-- Assessed application response behavior
-- Documented findings and remediation recommendations
-
-**Skills Demonstrated**
-
-- SQL Injection Testing
-- Database Enumeration
-- Burp Suite Proxy & Repeater
-- HTTP Request Analysis
-- Manual Vulnerability Validation
-
-**Documentation**
-
-```
-sql-injection/
-```
+📁 [View SQL Injection Assessment](./SQL-Injection/)
 
 ---
 
-## 2. Reflected Cross-Site Scripting (XSS)
+### 2. Reflected Cross-Site Scripting (XSS)
 
-**Severity:** High
+Assessed whether user-controlled input was reflected without proper output encoding, allowing JavaScript execution within the browser.
 
-The Reflected XSS assessment verified that user-supplied input was reflected into the application's response without proper output encoding, allowing arbitrary JavaScript execution within the browser.
+**Key areas covered:**
+- Reflected XSS validation
+- JavaScript execution
+- HTTP request and response analysis
+- Impact assessment and remediation
 
-### Activities Performed
-
-- Captured and modified HTTP requests
-- Executed JavaScript payloads
-- Verified reflected input
-- Demonstrated browser-side script execution
-- Analyzed server responses
-- Documented findings and mitigation strategies
-
-**Skills Demonstrated**
-
-- Cross-Site Scripting (XSS) Testing
-- HTTP Request & Response Analysis
-- Burp Suite Proxy & Repeater
-- Client-Side Security Testing
-- Manual Vulnerability Validation
-
-**Documentation**
-
-```
-reflected-xss/
-```
+📁 [View Reflected XSS Assessment](./XSS-Reflected/)
 
 ---
 
-## 3. Command Injection
+### 3. Command Injection
 
-**Severity:** Critical
+Tested whether user-controlled input could be used to execute operating system commands on the underlying server.
 
-The Command Injection assessment demonstrated how unsanitized user input can be executed as operating system commands, potentially leading to complete server compromise.
+**Key areas covered:**
+- Command injection validation
+- HTTP POST request analysis
+- Operating system command execution
+- Reverse shell demonstration in a controlled lab environment
+- Impact assessment and remediation
 
-### Activities Performed
-
-- Captured HTTP POST requests
-- Modified request parameters
-- Verified operating system command execution
-- Retrieved server information
-- Accessed sensitive system files
-- Established a reverse shell within the controlled lab environment
-- Documented findings and remediation recommendations
-
-**Skills Demonstrated**
-
-- Command Injection Testing
-- Burp Suite Proxy & Repeater
-- Linux Command Line
-- HTTP Request Analysis
-- Reverse Shell Fundamentals
-- Security Documentation
-
-**Documentation**
-
-```
-command-injection/
-```
+📁 [View Command Injection Assessment](./Command-Injection/)
 
 ---
 
-# Repository Structure
+### 4. File Upload
 
-```
-dvwa-web-application-security-assessment/
+Assessed the application's file upload functionality and demonstrated the security impact of insufficient validation of uploaded files.
 
-├── README.md
-│
-├── sql-injection/
-│   ├── README.md
-│   ├── findings.md
-│   ├── remediation.md
-│   ├── report.md
-│   ├── screenshots.md
-│   └── screenshots/
-│
-├── reflected-xss/
-│   ├── README.md
-│   ├── findings.md
-│   ├── remediation.md
-│   ├── report.md
-│   ├── screenshots.md
-│   └── screenshots/
-│
-├── command-injection/
-    ├── README.md
-    ├── findings.md
-    ├── remediation.md
-    ├── report.md
-    ├── screenshots.md
-    └── screenshots/
+**Key areas covered:**
+- File upload validation testing
+- HTTP request interception using Burp Suite
+- MIME type manipulation
+- Server-side file execution
+- Command execution and reverse shell demonstration in a controlled lab environment
+- Impact assessment and remediation
 
-```
+📁 [View File Upload Assessment](./File-Upload/)
 
 ---
 
-# Tools Used
+## Tools Used
 
-- Burp Suite Community Edition
-- Firefox Browser
 - Kali Linux
+- Burp Suite Community Edition
 - DVWA
-- Apache
-- MySQL
+- Metasploitable 2
+- Metasploit Framework
 - Netcat
+- Firefox
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
-- Web Application Penetration Testing (VAPT)
-- Vulnerability Assessment
-- Manual Security Testing
-- HTTP Request & Response Analysis
-- Burp Suite Proxy & Repeater
+- Web Application VAPT
+- Manual Vulnerability Assessment
+- HTTP Request and Response Analysis
+- Burp Suite Proxy and Repeater
 - SQL Injection Testing
-- Cross-Site Scripting (XSS) Testing
+- Reflected XSS Testing
 - Command Injection Testing
-- Database Enumeration
+- File Upload Vulnerability Testing
 - Linux Fundamentals
-- Technical Documentation
-- Vulnerability Reporting
-- OWASP Top 10 Awareness
+- Vulnerability Documentation and Reporting
+- Remediation Recommendations
 
 ---
 
-# Learning Outcomes
+## Disclaimer
 
-This project provided practical experience in:
-
-- Identifying common web application vulnerabilities
-- Understanding insecure coding practices
-- Intercepting and modifying HTTP traffic
-- Assessing the security impact of vulnerabilities
-- Preparing professional penetration testing documentation
-- Recommending secure coding practices and remediation techniques
-
----
-
-# Disclaimer
-
-This assessment was conducted **only within an authorized DVWA laboratory environment** for educational purposes. All testing was performed against an intentionally vulnerable application running in a local virtual machine. No unauthorized systems or production environments were targeted.
-
----
+This assessment was conducted only within an authorized and isolated laboratory environment using intentionally vulnerable applications for educational and cybersecurity training purposes. No unauthorized systems or production environments were targeted.
