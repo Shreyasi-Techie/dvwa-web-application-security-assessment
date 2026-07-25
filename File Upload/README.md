@@ -2,110 +2,85 @@
 
 ## Overview
 
-This section documents the exploitation of an unrestricted file upload vulnerability in **Damn Vulnerable Web Application (DVWA)** running on a Metasploitable 2 virtual machine.
+This section documents the exploitation of a file upload vulnerability in **Damn Vulnerable Web Application (DVWA)** running on **Metasploitable 2**.
 
-The vulnerability allows an attacker to upload a malicious file containing server-side code to the web server. When the uploaded file is accessed through the browser, the server executes the code, resulting in remote command execution.
-
-The testing was performed in a controlled lab environment using:
-
-- Kali Linux
-- Burp Suite
-- DVWA
-- Metasploitable 2
-- Metasploit Framework
+The vulnerability occurs when an application fails to properly validate uploaded files, allowing an attacker to upload a server-side executable file. In this lab, a PHP file was uploaded and successfully executed by the web server.
 
 ---
 
-## Vulnerability Description
+## Testing Environment
 
-The file upload functionality does not properly validate uploaded files.
-
-Insufficient validation of:
-
-- File extensions
-- MIME types
-- File contents
-- Server-side execution permissions
-
-allows an attacker to upload a server-side script disguised as an image or other permitted file type.
-
-In this assessment, a PHP file containing a command-execution payload was uploaded successfully. The uploaded file was then accessed through the web application, allowing commands to be executed on the target system.
+- **Attacker:** Kali Linux
+- **Target:** Metasploitable 2
+- **Application:** DVWA
+- **Tools:** Burp Suite and Metasploit Framework
 
 ---
 
-## Lab Environment
+## Assessment Summary
 
-| Component | Details |
-|---|---|
-| Attacker Machine | Kali Linux |
-| Target Machine | Metasploitable 2 |
-| Application | DVWA |
-| Vulnerable Functionality | File Upload |
-| Web Server | Apache |
-| Testing Tool | Burp Suite |
-| Post-Exploitation Tool | Metasploit Framework |
+During testing, a PHP file containing a command-execution payload was created and uploaded through the DVWA File Upload functionality.
 
----
+The upload request was intercepted using **Burp Suite**, where the file's MIME type was modified to demonstrate inadequate server-side validation. The file was then successfully uploaded to the target server.
 
-## Methodology
+After accessing the uploaded file, command execution was confirmed on the target system. A reverse shell was subsequently established, providing a command shell running with `www-data` privileges.
 
-### 1. Create a Test PHP File
+Basic post-exploitation enumeration was then performed, including:
 
-A simple PHP file was created in the Kali Linux terminal containing a command execution function.
-
-The file was created for testing purposes in the isolated DVWA lab environment.
+- Current user identification
+- Operating system identification
+- Uploaded file verification
+- Network interface enumeration
+- Routing table enumeration
 
 ---
 
-### 2. Access the File Upload Functionality
+## Impact
 
-The DVWA File Upload page was accessed and the PHP file was selected for upload.
+Successful exploitation of this vulnerability can allow an attacker to:
 
-The application was configured with a security level that allowed the vulnerable behavior to be demonstrated.
+- Upload unauthorized files
+- Execute server-side code
+- Execute commands on the target system
+- Obtain a remote shell
+- Perform further system reconnaissance
 
----
-
-### 3. Capture the Upload Request with Burp Suite
-
-The upload request was intercepted using Burp Suite.
-
-The request used a `multipart/form-data` body and contained the uploaded PHP file.
+The impact can be **Critical** when arbitrary server-side code execution is possible.
 
 ---
 
-### 4. Modify the Content-Type
+## Evidence
 
-The file upload request was inspected and the uploaded file's MIME type was modified to resemble an image file.
+Screenshots documenting the testing process are available in the [`screenshots`](./screenshots/) directory.
 
-This demonstrated that relying only on the client-supplied MIME type is insufficient for secure file validation.
+The evidence includes:
 
----
-
-### 5. Upload the File
-
-The modified request was forwarded to the server.
-
-The application accepted the uploaded file and returned a successful upload message.
-
-The file was stored in the web application's upload directory.
-
----
-
-### 6. Access the Uploaded File
-
-The uploaded PHP file was accessed through the browser.
-
-Because the uploaded file was stored in a web-accessible directory and server-side script execution was permitted, the PHP code was executed by the server.
-
-This resulted in command execution on the target system.
+- File creation
+- File upload
+- Burp Suite request interception
+- MIME type modification
+- Successful upload
+- Command execution
+- Reverse shell establishment
+- Interactive shell access
+- System and network enumeration
 
 ---
 
-## Remote Command Execution
+## Remediation
 
-The uploaded PHP file was used to execute commands on the target system.
+Recommended security controls include:
 
-The following commands were used for lab validation:
+- Validate file extensions using a strict allowlist.
+- Validate the actual contents of uploaded files.
+- Do not rely solely on the client-supplied MIME type.
+- Prevent execution of server-side scripts in upload directories.
+- Store uploaded files outside the web root where possible.
+- Rename uploaded files using server-generated filenames.
+- Apply least-privilege permissions to the web server.
 
-```bash
-whoami
+---
+
+## Disclaimer
+
+This assessment was performed in an intentionally vulnerable and isolated laboratory environment using DVWA and Metasploitable 2 for educational and cybersecurity training purposes.
