@@ -55,7 +55,7 @@ Tested the application's handling of user-supplied input and demonstrated SQL qu
 - UNION-based SQL Injection
 - Impact assessment and remediation
 
-📁 [View SQL Injection Assessment](/SQL-injection/)
+📁 [View SQL Injection Assessment](SQL injection)
 
 ---
 
